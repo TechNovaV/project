@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Lời muốn nói</title>
+    <style>
+      /* --- CSS Styling --- */
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Roboto", sans-serif;
+        background-color: #ffffff;
+        overflow: hidden;
+      }
+
+      .title {
+        position: fixed;
+        top: 30px;
+        font-size: 50px;
+        color: #333;
+      }
+
+      button {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        padding: 15px 30px;
+        font-size: 20px;
+        font-family: "Arial", "Helvetica", sans-serif;
+        background-color: #0633ea;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #c47cd8;
+      }
+
+      .notification {
+        position: absolute;
+        width: 280px;
+        /* --- THAY ĐỔI 1: Đổi màu nền --- */
+        background-color: #bf71f3; /* Màu tím nhạt */
+        border-radius: 10px;
+        /* --- THAY ĐỔI 2: Đổi màu viền --- */
+        border: 2px solid #8c2fde; /* Màu tím vừa */
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        animation: fadein 0.5s;
+        font-family: "Arial", "Helvetica", sans-serif;
+        /* --- THAY ĐỔI 3: Căn giữa chữ --- */
+        text-align: center;
+      }
+
+      .notification .title-noti {
+        font-weight: bold;
+        /* --- THAY ĐỔI 4: Đổi màu chữ tiêu đề --- */
+        color: #c52f6d; /* Màu tím đậm */
+      }
+
+      .notification .message {
+        margin: 8px 0;
+        font-size: 14px;
+      }
+
+      /* --- ĐÃ XOÁ --- */
+      /* Toàn bộ phần .minimize-btn đã được xoá */
+
+      @keyframes fadein {
+        from {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">🤡Nhấn vô đi cục zàng🤡</div>
+    <button onclick="startGeneration(this)">Nhấn đây nè</button>
+
+    <script>
+      /* --- JavaScript Logic --- */
+      const messages = [
+        {
+          title: "có cái nịt",
+          message: "Free fire là số 1!",
+        },
+        {
+          title: "có cái nịt",
+          message: "Free fire là số 1!",
+        },
+        {
+          title: "có cái nịt",
+          message: "Free fire là số 1!",
+        },
+      ];
+
+      function startGeneration(button) {
+        button.style.display = "none";
+        createNotificationLoop();
+      }
+
+      function createNotificationLoop() {
+        const notification = document.createElement("div");
+        notification.classList.add("notification");
+
+        notification.style.top =
+          Math.random() * (window.innerHeight - 150) + "px";
+        notification.style.left =
+          Math.random() * (window.innerWidth - 300) + "px";
+
+        const randomMessage =
+          messages[Math.floor(Math.random() * messages.length)];
+
+        /* --- THAY ĐỔI 5: Đã xoá nút '-' ra khỏi đây --- */
+        notification.innerHTML = `
+                <div class="title-noti">${randomMessage.title}</div>
+                <div class="message">${randomMessage.message}</div>
+            `;
+
+        document.body.appendChild(notification);
+
+        setTimeout(createNotificationLoop, 200);
+      }
+
+      /* --- ĐÃ XOÁ --- */
+      /* Toàn bộ hàm minimizeNotification() đã được xoá 
+           vì không còn nút nào để gọi nó. */
+    </script>
+  </body>
+</html>
