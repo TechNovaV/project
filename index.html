@@ -1,150 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZinLux - Đồng hồ Sang trọng & Hiện đại</title>
+    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Lời muốn nói</title>
-    <style>
-      /* --- CSS Styling --- */
-      body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: "Roboto", sans-serif;
-        background-color: #ffffff;
-        overflow: hidden;
-      }
-
-      .title {
-        position: fixed;
-        top: 30px;
-        font-size: 50px;
-        color: #333;
-      }
-
-      button {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-        padding: 15px 30px;
-        font-size: 20px;
-        font-family: "Arial", "Helvetica", sans-serif;
-        background-color: #0633ea;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #c47cd8;
-      }
-
-      .notification {
-        position: absolute;
-        width: 280px;
-        /* --- THAY ĐỔI 1: Đổi màu nền --- */
-        background-color: #bf71f3; /* Màu tím nhạt */
-        border-radius: 10px;
-        /* --- THAY ĐỔI 2: Đổi màu viền --- */
-        border: 2px solid #8c2fde; /* Màu tím vừa */
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        box-sizing: border-box;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        animation: fadein 0.5s;
-        font-family: "Arial", "Helvetica", sans-serif;
-        /* --- THAY ĐỔI 3: Căn giữa chữ --- */
-        text-align: center;
-      }
-
-      .notification .title-noti {
-        font-weight: bold;
-        /* --- THAY ĐỔI 4: Đổi màu chữ tiêu đề --- */
-        color: #c52f6d; /* Màu tím đậm */
-      }
-
-      .notification .message {
-        margin: 8px 0;
-        font-size: 14px;
-      }
-
-      /* --- ĐÃ XOÁ --- */
-      /* Toàn bộ phần .minimize-btn đã được xoá */
-
-      @keyframes fadein {
-        from {
-          transform: scale(0.5);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <div class="title">🤡Nhấn vô đi cục zàng🤡</div>
-    <button onclick="startGeneration(this)">Nhấn đây nè</button>
+    <header class="main-header">
+      <div class="container">
+        <div class="header-left">
+          <div class="logo">
+            <a href="#">
+              <img src="logo.png" alt="Logo ZinLux" width="150" height="150" />
+            </a>
+          </div>
+          <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm..." />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Nam</a></li>
+            <li><a href="#">Nữ</a></li>
+            <li><a href="#">Bộ Sưu Tập</a></li>
+            <li><a href="#">Thương Hiệu</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <a href="#" class="icon-cart"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </header>
 
-    <script>
-      /* --- JavaScript Logic --- */
-      const messages = [
-        {
-          title: "có cái nịt",
-          message: "Free fire là số 1!",
-        },
-        {
-          title: "có cái nịt",
-          message: "Free fire là số 1!",
-        },
-        {
-          title: "có cái nịt",
-          message: "Free fire là số 1!",
-        },
-      ];
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Kiệt Tác Của Thời Gian</h1>
+        <p>Trải nghiệm tay nghề và di sản vô song.</p>
+        <a href="#" class="btn btn-primary">Khám Phá Bộ Sưu Tập</a>
+      </div>
+    </section>
 
-      function startGeneration(button) {
-        button.style.display = "none";
-        createNotificationLoop();
-      }
+    <section class="featured-collections section-padding">
+      <div class="container">
+        <h2>Bộ Sưu Tập Nổi Bật</h2>
+        <div class="collection-grid">
+          <div class="collection-item">
+            <img src="02.avif" alt="The Legacy Watch" />
+            <h3>KOI</h3>
+            <p class="brand">KOI Noble K002.403.641.51.03.04</p>
+            <a href="#" class="btn btn-secondary">Xem Chi Tiết</a>
+          </div>
+          <div class="collection-item">
+            <img src="03.avif" alt="The Pioneer Watch" />
+            <h3>KOI</h3>
+            <p class="brand">KOI Noble K002.403.641.50.01.04</p>
+            <a href="#" class="btn btn-secondary">Xem Chi Tiết</a>
+          </div>
+          <div class="collection-item">
+            <img src="04.avif" alt="The Journey Watch" />
+            <h3>KOI</h3>
+            <p class="brand">KOI Noble K002.403.641.03.05.04</p>
+            <a href="#" class="btn btn-secondary">Xem Chi Tiết</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      function createNotificationLoop() {
-        const notification = document.createElement("div");
-        notification.classList.add("notification");
+    <section class="best-sellers section-padding">
+      <div class="container">
+        <h2>Sản phẩm bán chạy nhất</h2>
+        <div class="product-grid">
+          <div class="product-item">
+            <img src="05.avif" alt="Ocean Star 200" />
+            <h3>Titoni Cosmo King 797 SY-695</h3>
+            <p class="brand">Titoni Cosmo King</p>
+            <p class="price">47.520.000 ₫</p>
+          </div>
+          <div class="product-item">
+            <img src="06.avif" alt="The Obsidian" />
+            <h3>Titoni Cosmo King 797 S-719</h3>
+            <p class="brand">Titoni Cosmo King</p>
+            <p class="price">44.770.000 ₫</p>
+          </div>
+          <div class="product-item">
+            <img src="07.avif" alt="BUIKISA XTAMAHID" />
+            <h3>Titoni Cosmo King 797 S-696</h3>
+            <p class="brand">Titoni Cosmo King</p>
+            <p class="price">43.010.000 ₫</p>
+          </div>
+          <div class="product-item">
+            <img src="08.avif" alt="MUNUCIM TIMEPIECET" />
+            <h3>Titoni Cosmo King 797 S-540</h3>
+            <p class="brand">Titoni Cosmo King</p>
+            <p class="price">42.220.000 ₫</p>
+          </div>
+        </div>
+        <a href="#" class="btn btn-text">VIEW ALL PRODUCTS</a>
+      </div>
+    </section>
 
-        notification.style.top =
-          Math.random() * (window.innerHeight - 150) + "px";
-        notification.style.left =
-          Math.random() * (window.innerWidth - 300) + "px";
+    <section class="our-story-section">
+      <div class="container">
+        <div class="story-content">
+          <h2>READ OUR STORY</h2>
+          <p>YOUR STORY, YOUR TIMEPIECE.</p>
+          <a href="#" class="btn btn-primary">READ OUR STORY</a>
+        </div>
+      </div>
+    </section>
 
-        const randomMessage =
-          messages[Math.floor(Math.random() * messages.length)];
-
-        /* --- THAY ĐỔI 5: Đã xoá nút '-' ra khỏi đây --- */
-        notification.innerHTML = `
-                <div class="title-noti">${randomMessage.title}</div>
-                <div class="message">${randomMessage.message}</div>
-            `;
-
-        document.body.appendChild(notification);
-
-        setTimeout(createNotificationLoop, 200);
-      }
-
-      /* --- ĐÃ XOÁ --- */
-      /* Toàn bộ hàm minimizeNotification() đã được xoá 
-           vì không còn nút nào để gọi nó. */
-    </script>
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col about-us">
+            <h3>TIMEKEEPER</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              efficitur.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>CUSTOMER SERVICE</h3>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">RETURNS</a></li>
+              <li><a href="#">SHIPPING</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>ABOUT US</h3>
+            <ul>
+              <li><a href="#">CAREERS</a></li>
+              <li><a href="#">STORE LOCATOR</a></li>
+              <li><a href="#">OUR STORY</a></li>
+            </ul>
+          </div>
+          <div class="footer-col newsletter">
+            <h3>JOIN OUR NEWSLETTER</h3>
+            <form>
+              <input type="email" placeholder="Enter your email" />
+              <button type="submit">SUBSCRIBE</button>
+            </form>
+            <div class="social-icons">
+              <a href="#"><img src="icons/facebook.svg" alt="Facebook" /></a>
+              <a href="#"><img src="icons/instagram.svg" alt="Instagram" /></a>
+              <a href="#"><img src="icons/twitter.svg" alt="Twitter" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <p>sản phẩm tạo ra với mục đích học thuật</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
